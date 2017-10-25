@@ -15,10 +15,14 @@ public class Processor2 implements SplittingStrategy{
 
 
     public List<String> processing2(Document document) {
+        //split logic.
         Elements elements = doSplit(document);
+
+        // do something using the split output
         return elements.stream().map(element -> element.text()).collect(Collectors.toList());
     }
 
+    //how do we ensure the implementation of this method is same as that of processor1?
     public Elements doSplit(Document document) {
         Elements elements = Selector.select(".question,.answer", document.body());
         return elements;

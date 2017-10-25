@@ -14,7 +14,10 @@ import java.util.stream.Collectors;
 public class Processor1 implements SplittingStrategy {
 
     public List<String> processing1(Document document) {
+        //split logic
         Elements elements = doSplit(document);
+
+        // do something using the split output
         return elements.stream().map(element -> element.text()).collect(Collectors.toList());
     }
 
